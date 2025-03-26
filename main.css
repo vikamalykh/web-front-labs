@@ -31,3 +31,24 @@ footer {
 a {
     text-decoration: none;
   }
+a:link {
+    color:rgb(87, 20, 20);
+    font-style: italic;
+}
+
+a:visited {
+    color: rgb(44, 122, 31);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(0, 72, 255);
+    text-decoration: underline;
+    background-color: rgb(145, 183, 255);
+    box-shadow: 5px 5px 5px rgba(69, 115, 231, 0.462);
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
