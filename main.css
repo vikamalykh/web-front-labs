@@ -38,6 +38,7 @@ a:link {
 
 a:visited {
     color: rgb(44, 122, 31);
+    font-style: none;
     text-decoration: underline;
 }
 
