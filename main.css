@@ -17,7 +17,7 @@ main {
     background-color: rgb(216, 240, 249);
     color: rgb(3, 57, 73);
     font-family:'Times New Roman', Times, serif;
-    margin: 0px;
+    margin: 10px 20px 36px;
 }
 
 footer {
@@ -26,6 +26,10 @@ footer {
     font-family:'Times New Roman', Times, serif;
     margin: 0px;
     font-size: 12pt;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 a {
