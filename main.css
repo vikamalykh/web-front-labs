@@ -48,9 +48,29 @@ a:hover {
     background-color: rgb(145, 183, 255);
     box-shadow: 5px 5px 5px rgba(69, 115, 231, 0.462);
     transition: 0.3s;
+    font-size: 13pt;
 }
 
 a:active {
     color: black;
     opacity: 0.3;
+}
+
+div.menu {
+    border: 7px solid rgba(97, 193, 234, 0.737);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0px auto;
+    transition: 1s 0.5s;
+}
+
+div.menu:hover {
+    background-color: rgba(188, 240, 241, 0.74);
+    box-shadow: 0 0 15px rgba(45, 44, 44, 0.628);
+    transition: 0.5s;
+}
+
+h1.mn {
+    text-align: center;
+    text-shadow: 5px 5px 15px rgba(27, 39, 79, 0.692);
 }
