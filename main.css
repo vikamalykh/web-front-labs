@@ -32,14 +32,12 @@ a {
     text-decoration: none;
   }
 a:link {
-    color:rgb(87, 20, 20);
+    color:rgb(124, 43, 154);
     font-style: italic;
 }
 
 a:visited {
-    color: rgb(44, 122, 31);
-    font-style: none;
-    text-decoration: underline;
+    color: rgb(134, 36, 36);
 }
 
 a:hover {
