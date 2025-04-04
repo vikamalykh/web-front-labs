@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <style>
+        footer, header {
+            z-index: 100;
+        }
+        div {
+            position: relative;
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+            z-index: 1;
+        } 
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: 0;
+        }
+        .position-relative:hover {
+            z-index: 2;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+            transition: 1s 1s;
+        }
+        .position-absolute:hover {
+            width: 400px;
+            height: 100px;
+            background-color: rgb(219, 195, 241);
+            box-shadow: 10px 10px 5px gray;
+            color: rgb(109, 50, 109);
+            transition: 1s;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
