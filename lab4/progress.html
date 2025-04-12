@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Степень прогресса</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <style>
+        .container {
+            width: 350px;
+            margin: 100px auto;
+            border: 2px solid #a52a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(203, 233, 241); 
+        }
+        .text {
+            color: rgb(115, 27, 27);
+            font-size: 25pt;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 20px;
+        }
+        .progress {
+            width: 85%;
+            height: 10px;
+            margin: auto;
+            border: 2px solid #a63232;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .progress-box {
+            height: 100%;
+            width: 0;
+            background: #4c5caf;
+            transition: width 5s linear;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #00008b;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px #0b0b555a;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .button:hover {
+            box-shadow: 8px 8px 10px rgb(12, 97, 166);
+            color: #00ddff;
+        }
+        .button:active {
+            box-shadow: none;
+        }
+        .button:active + .progress .progress-box {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="text">Степень прогресса</div>
+                <div class="progress">
+                    <div class="progress-box"></div>
+                </div>
+                <button class="button">Нажмите и удерживайте</button>
+            </div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+
+</body>
+</html>
