@@ -9,6 +9,9 @@
     <link rel="icon" href="../icon/favicon-32x32.png">
     <link rel="icon" href="../icon/favicon.ico">
     <style>
+        footer, header {
+            z-index: 100;
+        }
         main {
             display: flex;
             justify-content: center;
@@ -18,8 +21,8 @@
 
         .tag-cloud {
             position: relative;
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -27,17 +30,15 @@
         }
 
         .tag {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 15px;
-            border-radius: 5px;
+            margin: 15px;
+            padding: 10px 5px;
             color: white;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+            transition: transform 0.3s;
+            cursor: pointer;
         } 
         .tag:hover {
             transform: scale(2.1);
-            text-shadow: 0 4px 20px rgba(13, 25, 203, 0.3);
+            text-shadow: 4px 4px 20px rgba(13, 25, 203, 0.3);
             z-index: 10;
         }
 
@@ -48,72 +49,72 @@
         }
         .tag2 { 
             color: #e715c7; 
-            font-size: 56pt;  
+            font-size: 50pt;  
             transform: rotate(-20deg); 
         }
         .tag3 { 
             color: #030f8f; 
-            font-size: 45pt;  
+            font-size: 35pt;  
             transform: rotate(-85deg); 
         }
         .tag4 { 
             color: #45e73c; 
-            font-size: 60pt; 
+            font-size: 40pt; 
             transform: rotate(27deg); 
         }
         .tag5 { 
             color: #d0cb2a; 
-            font-size: 75pt;  
+            font-size: 35pt;  
             transform: rotate(30deg); 
         }
         .tag6 { 
             color: #000000; 
-            font-size: 90pt; 
+            font-size: 45pt; 
             transform: rotate(-10deg); 
         }
         .tag7 { 
             color: #5a145f; 
-            font-size: 70pt;  
+            font-size: 30pt;  
             transform: rotate(-75deg); 
         }
         .tag8 { 
             color: #14d4a7; 
-            font-size: 85pt;  
-            transform: rotate(80deg); 
+            font-size: 40pt;  
+            transform: rotate(70deg); 
         }
         .tag9 { 
             color: #6ef004; 
-            font-size: 80pt;  
+            font-size: 30pt;  
             transform: rotate(-35deg); 
         }
         .tag10 { 
             color: #6424a3; 
-            font-size: 100pt;  
+            font-size: 50pt;  
             transform: rotate(-10deg); 
         }
         .tag11 { 
             color: #fd0000; 
-            font-size: 75pt;  
+            font-size: 35pt;  
             transform: rotate(-5deg); 
         }
         .tag12 { 
             color: #548044; 
-            font-size: 70pt;  
+            font-size: 25pt;  
             transform: rotate(25deg); 
         }
         .tag13 { 
             color: #263558; 
-            font-size: 80pt;  
+            font-size: 30pt;  
             transform: rotate(-45deg); 
         }
         .tag14 { 
             color: #c017fd; 
-            font-size: 85pt;  
+            font-size: 36pt;  
             transform: rotate(50deg); 
         }
         .tag15 { 
             color: #141681; 
-            font-size: 70pt;  
+            font-size: 37pt;  
             transform: rotate(60deg); 
         }
     </style>
