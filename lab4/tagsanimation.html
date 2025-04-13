@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Теги</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <style>
+        footer, header {
+            z-index: 100;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:'Times New Roman', Times, serif;
+            padding: 20px 20px;
+        }
+
+        .tag-cloud {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tag {
+            margin: 15px;
+            padding: 10px 5px;
+            color: white;
+            transition: transform 0.3s;
+            cursor: pointer;
+        } 
+        .tag:hover {
+            transform: scale(2.1);
+            text-shadow: 4px 4px 20px rgba(68, 55, 55, 0.705);
+            z-index: 10;
+            animation-play-state: paused;
+        }
+
+        .tag1 { 
+            color: #1a567d; 
+            font-size: 40pt;
+            animation-name: tag1;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes tag1 {
+            0% {
+                transform: rotate(-10deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-5deg) translate(10px, -10px);
+            }
+            50% {
+                transform: rotate(-0deg) translate(-10px, 10px);
+            }
+            75% {
+                transform: rotate(5deg) translate(5px, 5px);
+            }
+            100% {
+                transform: rotate(10deg) translate(-5px, -5px);
+            }
+        }
+
+        .tag2 { 
+            color: #e715c7; 
+            font-size: 50pt;
+            animation: tag2 5s infinite alternate;   
+        }
+        @keyframes tag2 {
+            0% {
+                transform: rotate(-20deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-10deg) translate(-20px, 10px);
+            }
+            50% {
+                transform: rotate(-5deg) translate(-10px, 5px);
+            }
+            75% {
+                transform: rotate(20deg) translate(51px, 15px);
+            }
+            100% {
+                transform: rotate(10deg) translate(-15px, -25px);
+            }
+        }
+
+        .tag3 { 
+            color: #030f8f; 
+            font-size: 35pt;
+            animation: tag3 5s infinite alternate;
+        }
+        @keyframes tag3 {
+            0% {
+                transform: rotate(-85deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-35deg) translate(70px, 20px);
+            }
+            50% {
+                transform: rotate(45deg) translate(-20px, -25px);
+            }
+            75% {
+                transform: rotate(20deg) translate(-10px, -5px);
+            }
+            100% {
+                transform: rotate(-30deg) translate(30px, -30px);
+            }
+        }
+
+        .tag4 { 
+            color: #45e73c; 
+            font-size: 40pt; 
+            animation: tag4 5s infinite alternate;
+        }
+        @keyframes tag4 {
+            0% {
+                transform: rotate(27deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-35deg) translate(-75px, -25px);
+            }
+            50% {
+                transform: rotate(45deg) translate(80px, -25px);
+            }
+            75% {
+                transform: rotate(20deg) translate(25px, -45px);
+            }
+            100% {
+                transform: rotate(-30deg) translate(80px, 60px);
+            }
+        }
+
+        .tag5 { 
+            color: #d0cb2a; 
+            font-size: 35pt;  
+            animation: tag5 5s infinite alternate; 
+        }
+        @keyframes tag5 {
+            0% {
+                transform: rotate(30deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-20deg) translate(-50px, 20px);
+            }
+            50% {
+                transform: rotate(10deg) translate(60px, -30px);
+            }
+            75% {
+                transform: rotate(25deg) translate(-30px, 40px);
+            }
+            100% {
+                transform: rotate(-15deg) translate(50px, 10px);
+            }
+        }
+
+        .tag6 { 
+            color: #000000; 
+            font-size: 45pt; 
+            animation: tag6 5s infinite alternate; 
+        }
+        @keyframes tag6 {
+            0% {
+                transform: rotate(-10deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(15deg) translate(40px, -20px);
+            }
+            50% {
+                transform: rotate(-5deg) translate(-50px, 30px);
+            }
+            75% {
+                transform: rotate(20deg) translate(20px, -10px);
+            }
+            100% {
+                transform: rotate(-25deg) translate(30px, 50px);
+            }
+        }
+
+        .tag7 { 
+            color: #5a145f; 
+            font-size: 30pt;  
+            animation: tag7 5s infinite alternate; 
+        }
+        @keyframes tag7 {
+            0% {
+                transform: rotate(-75deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-50deg) translate(70px, 10px);
+            }
+            50% {
+                transform: rotate(-30deg) translate(-60px, -20px);
+            }
+            75% {
+                transform: rotate(-10deg) translate(40px, 30px);
+            }
+            100% {
+                transform: rotate(10deg) translate(-30px, 50px);
+            }
+        }
+
+        .tag8 { 
+            color: #14d4a7; 
+            font-size: 40pt;  
+            animation: tag8 5s infinite alternate; 
+        }
+        @keyframes tag8 {
+            0% {
+                transform: rotate(70deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(50deg) translate(-40px, 20px);
+            }
+            50% {
+                transform: rotate(30deg) translate(60px, -10px);
+            }
+            75% {
+                transform: rotate(10deg) translate(-20px, 30px);
+            }
+            100% {
+                transform: rotate(-10deg) translate(50px, 40px);
+            }
+        }
+
+        .tag9 { 
+            color: #6ef004; 
+            font-size: 30pt;  
+            animation: tag9 5s infinite alternate; 
+        }
+        @keyframes tag9 {
+            0% {
+                transform: rotate(-35deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-15deg) translate(30px, 10px);
+            }
+            50% {
+                transform: rotate(5deg) translate(-40px, -20px);
+            }
+            75% {
+                transform: rotate(25deg) translate(20px, 30px);
+            }
+            100% {
+                transform: rotate(45deg) translate(-30px, 50px);
+            }
+        }
+
+        .tag10 { 
+            color: #6424a3; 
+            font-size: 50pt;  
+            animation: tag10 5s infinite alternate; 
+        }
+        @keyframes tag10 {
+            0% {
+                transform: rotate(-10deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(20deg) translate(50px, -10px);
+            }
+            50% {
+                transform: rotate(30deg) translate(-30px, 20px);
+            }
+            75% {
+                transform: rotate(10deg) translate(40px, 30px);
+            }
+            100% {
+                transform: rotate(-20deg) translate(-50px, 50px)
+            }
+        }
+
+        .tag11 { 
+            color: #fd0000; 
+            font-size: 35pt;  
+            animation: tag11 5s infinite alternate;
+        }
+        @keyframes tag11 {
+            0% {
+                transform: rotate(15deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-25deg) translate(-40px, 15px);
+            }
+            50% {
+                transform: rotate(35deg) translate(50px, -20px);
+            }
+            75% {
+                transform: rotate(-15deg) translate(-30px, 25px);
+            }
+            100% {
+                transform: rotate(5deg) translate(20px, 10px);
+            }
+        }
+
+        .tag12 { 
+            color: #548044; 
+            font-size: 25pt;  
+            animation: tag12 5s infinite alternate; 
+        }
+        @keyframes tag12 {
+            0% {
+                transform: rotate(-20deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(30deg) translate(60px, -10px);
+            }
+            50% {
+                transform: rotate(-10deg) translate(-50px, 20px);
+            }
+            75% {
+                transform: rotate(20deg) translate(30px, -30px);
+            }
+            100% {
+                transform: rotate(-30deg) translate(40px, 15px);
+            }
+        }
+
+        .tag13 { 
+            color: #263558; 
+            font-size: 30pt;  
+            animation: tag13 5s infinite alternate; 
+        }
+        @keyframes tag13 {
+            0% {
+                transform: rotate(10deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-15deg) translate(-20px, 10px);
+            }
+            50% {
+                transform: rotate(25deg) translate(30px, -15px);
+            }
+            75% {
+                transform: rotate(-5deg) translate(-10px, 20px);
+            }
+            100% {
+                transform: rotate(15deg) translate(20px, 5px);
+            }
+        }
+
+        .tag14 { 
+            color: #c017fd; 
+            font-size: 36pt;  
+            animation: tag14 5s infinite alternate; 
+        }
+        @keyframes tag14 {
+            0% {
+                transform: rotate(-5deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(20deg) translate(50px, -5px);
+            }
+            50% {
+                transform: rotate(-30deg) translate(-40px, 25px);
+            }
+            75% {
+                transform: rotate(10deg) translate(20px, -10px);
+            }
+            100% {
+                transform: rotate(-15deg) translate(30px, 30px);
+            }
+        }
+
+        .tag15 { 
+            color: #141681; 
+            font-size: 37pt;  
+            animation: tag15 5s infinite alternate;
+        }
+        @keyframes tag15 {
+            0% {
+                transform: rotate(25deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(-10deg) translate(-30px, 5px);
+            }
+            50% {
+                transform: rotate(15deg) translate(40px, -20px);
+            }
+            75% {
+                transform: rotate(-20deg) translate(10px, 15px);
+            }
+            100% {
+                transform: rotate(5deg) translate(-20px, 25px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="tag-cloud">
+            <div class="tag tag1">fixed</div>
+            <div class="tag tag2">absolute</div>
+            <div class="tag tag3">relative</div>
+            <div class="tag tag4">padding</div>
+            <div class="tag tag5">margin</div>
+            <div class="tag tag6">float</div>
+            <div class="tag tag7">clear</div>
+            <div class="tag tag8">display</div>
+            <div class="tag tag9">flex</div>
+            <div class="tag tag10">grid</div>
+            <div class="tag tag11">overflow</div>
+            <div class="tag tag12">z-index</div>
+            <div class="tag tag13">position</div>
+            <div class="tag tag14">transform</div>
+            <div class="tag tag15">transition</div>
+        </div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
