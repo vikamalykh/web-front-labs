@@ -9,51 +9,61 @@
     <link rel="icon" href="../icon/favicon-32x32.png">
     <link rel="icon" href="../icon/favicon.ico">
     <style>
-        .container {
-            width: 350px;
-            margin: 100px auto;
-            border: 2px solid #a52a2a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            background-color: rgb(203, 233, 241); 
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
         }
-        .text {
-            color: rgb(115, 27, 27);
+        .container {
+            border: 3px solid rgba(45, 20, 40, 0.979);
+            border-radius: 15px;
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            margin: 10px;
+            background-color: rgba(207, 154, 179, 0.824); 
+        }
+        h1 {
+            color: rgb(49, 16, 34);
             font-size: 25pt;
             font-family: 'Times New Roman', Times, serif;
             margin-top: 20px;
         }
         .progress {
-            width: 85%;
-            height: 10px;
-            margin: auto;
-            border: 2px solid #a63232;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
+            border: 2px solid rgba(45, 20, 40, 0.979);
+            width: 300px;
+            height: 25px;
+            background: #ebd4f1;
+            margin: 10px auto;
+            position: relative; 
+            overflow: hidden; 
+            top: -27%;
         }
         .progress-box {
             height: 100%;
             width: 0;
-            background: #4c5caf;
+            background: #60193e;
             transition: width 5s linear;
         }
         .button {
-            padding: 10px 15px;
-            background-color: #00008b;
-            color: white;
-            border: none;
+            color: rgba(45, 20, 40, 0.979);
+            font-size: 18px;
             border-radius: 15px;
-            box-shadow: 5px 5px 5px #0b0b555a;
-            cursor: pointer;
-            transition: 0.5s;
+            background-color: #9f5594e2;
+            padding: 10px 30px;
+            margin: 10px auto;
+            border: none;
+            box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.349); 
+            transition:  0.5s;
+            position: relative; 
+            top: 30%;
         }
         .button:hover {
-            box-shadow: 8px 8px 10px rgb(12, 97, 166);
-            color: #00ddff;
+            box-shadow: 8px 8px 10px rgb(216, 235, 251);
+            color: #dfdde6;
         }
         .button:active {
             box-shadow: none;
@@ -70,12 +80,12 @@
 
     <main>
         <div class="container">
-            <div class="text">Степень прогресса</div>
-                <div class="progress">
-                    <div class="progress-box"></div>
-                </div>
-                <button class="button">Нажмите и удерживайте</button>
+            <h1>Степень прогресса</h1>
+            <button class="button">Нажмите и удерживайте</button>
+            <div class="progress">
+                <div class="progress-box"></div>
             </div>
+        </div>
     </main>
 
     <footer style="padding: 5px;">
