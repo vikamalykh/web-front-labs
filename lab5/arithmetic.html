@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Арифметика</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+    </script>
+    <style>
+         main {
+            display: flex;
+            justify-content: center;
+            height: 70vh;
+         }
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            width: 350px;
+            height: 25px;
+            border: 3.5px double #1b2158;
+            border-radius: 5px;
+            background-color: rgba(178, 178, 233, 0.859);
+            color: rgb(79, 22, 22);
+            font-size: 14pt;
+            text-align: center;
+            align-items: center;
+            margin: 5px;
+            padding: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
