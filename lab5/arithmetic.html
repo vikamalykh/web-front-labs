@@ -128,6 +128,17 @@
             let hello = 'Приветствую вас на моей странице!\nЕсли вы здесь, значит вы счастливчик;-)';
             alert(hello);
         }
+
+        function changeOutput(buttonNum, backColor, textColor, typeBorder, radiusBorder, widthBorder, pxBorder) {
+            let output = document.getElementById('output');
+            output.innerHTML =  'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderStyle = typeBorder;
+            output.style.borderRadius = radiusBorder;
+            output.style.borderWidth = widthBorder;
+            output.style.borderColor = textColor;
+        }
     </script>
     <style>
         header, footer {
@@ -135,8 +146,7 @@
         }
          main {
             display: flex;
-            justify-content: center;
-            height: 70vh;
+            flex-wrap: wrap;
          }
         .message {
             cursor: pointer;
@@ -153,6 +163,25 @@
             margin: 5px;
             padding: auto;
             overflow: auto;
+        }
+        .button {
+            height: 25px;
+            background-color: #1b2158;
+            color: white;
+            text-align: center;
+            padding: auto;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -172,6 +201,15 @@
         <div class="message" onclick="showPro()">Найти произведение чисел</div>
         <div class="message" onclick="showDiv()">Найти отношение чисел</div>
         <div class="message" onclick="showDeg()">Возведение в степень</div>
+
+        <div>
+            <input type="button" class="button" value="Кнопка 1" onclick="changeOutput(1, '#f086c6c0', '#75134e', 'solid', '5px', '4px')">
+            <input type="button" class="button" value="Кнопка 2" onclick="changeOutput(2, '#b05ed6', '#541173', 'dotted', '10px', '5px')">
+            <input type="button" class="button" value="Кнопка 3" onclick="changeOutput(3, '#86a2eb', '#1a3987', 'double', '15px', '7px')">
+            <input type="button" class="button" value="Кнопка 4" onclick="changeOutput(4, '#a0dbd0', '#1c7565', 'dashed', '5px', '3px')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showHello()" padding: 5px;>
