@@ -15,8 +15,19 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы:\nМалых Виктория Евгеньевна';
+            alert(author);
+        }
+        function showHello() {
+            let hello = 'Приветствую вас на моей странице!\nЕсли вы здесь, значит вы счастливчик;-)';
+            alert(hello);
+        }
     </script>
     <style>
+        header, footer {
+            cursor: pointer;
+        }
          main {
             display: flex;
             justify-content: center;
@@ -42,16 +53,16 @@
 
 <body>
 
-    <header style="padding: 5px;">
+    <header onclick="showAuthor()" style="padding: 5px;">
         НГТУ, ФБ, Лабораторная работа 4
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer style="padding: 5px;">
+    <footer ondblclick="showHello()" padding: 5px;>
         &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
     </footer>
     
