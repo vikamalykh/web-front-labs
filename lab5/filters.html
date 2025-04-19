@@ -21,6 +21,12 @@
             document.getElementById('brightnessImage').style.filter = 'brightness(' + value + ')';
         }
 
+        function contrastChange() {
+            let value = document.getElementById('contrastValue').value + '%';
+            document.getElementById('contrastOutput').innerText = value;
+            document.getElementById('contrastImage').style.filter = 'contrast(' + value + ')';
+        }
+
         
     </script>
 
@@ -52,6 +58,13 @@
             <span id="brightnessOutput">100%</span>
         </div>
         <div><img src="seafil.webp" id="brightnessImage"></div>
+
+        <div>
+            Фильтр contrast:
+            <input type="range" min="0" max="500" value="100" onchange="contrastChange()" id="contrastValue">
+            <span id="contrastOutput">100%</span>
+        </div>
+        <div><img src="seafil.webp" id="contrastImage"></div>
 
 
     </main>
