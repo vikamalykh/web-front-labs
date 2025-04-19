@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Круги с анимцией</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function hideCircle(element) {
+            element.style.width = "0px";
+            element.style.height = "0px";
+            element.style.opacity = "0";
+        }
+
+        function resetCircles() {
+            document.getElementById("circle1").style.width = "50px";
+            document.getElementById("circle1").style.height = "50px";
+            document.getElementById("circle1").style.opacity = "1";
+
+            document.getElementById("circle2").style.width = "50px";
+            document.getElementById("circle2").style.height = "50px";
+            document.getElementById("circle2").style.opacity = "1";
+
+            document.getElementById("circle3").style.width = "50px";
+            document.getElementById("circle3").style.height = "50px";
+            document.getElementById("circle3").style.opacity = "1";
+
+            document.getElementById("circle4").style.width = "50px";
+            document.getElementById("circle4").style.height = "50px";
+            document.getElementById("circle4").style.opacity = "1";
+
+            document.getElementById("circle5").style.width = "50px";
+            document.getElementById("circle5").style.height = "50px";
+            document.getElementById("circle5").style.opacity = "1";
+
+            document.getElementById("circle6").style.width = "50px";
+            document.getElementById("circle6").style.height = "50px";
+            document.getElementById("circle6").style.opacity = "1";
+
+            document.getElementById("circle7").style.width = "50px";
+            document.getElementById("circle7").style.height = "50px";
+            document.getElementById("circle7").style.opacity = "1";
+
+            document.getElementById("circle8").style.width = "50px";
+            document.getElementById("circle8").style.height = "50px";
+            document.getElementById("circle8").style.opacity = "1";
+
+            document.getElementById("circle9").style.width = "50px";
+            document.getElementById("circle9").style.height = "50px";
+            document.getElementById("circle9").style.opacity = "1";
+
+            document.getElementById("circle10").style.width = "50px";
+            document.getElementById("circle10").style.height = "50px";
+            document.getElementById("circle10").style.opacity = "1";
+        }
+    </script>
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: maroon;
+            font-size: 20px;
+            position: absolute;
+            border: 2px solid maroon;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        #reset {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white;
+            border: 2px solid rgb(26, 7, 109);
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(26, 26, 171, 0.536);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="circle" id="circle1" style="top: 300px; left: 50px; background-color: rgba(82, 218, 82, 0.72);" onclick="hideCircle(this)">1</div>
+        <div class="circle" id="circle2" style="top: 80px; left: 150px; background-color: rgb(175, 131, 229);" onclick="hideCircle(this)">2</div>
+        <div class="circle" id="circle3" style="top: 130px; left: 200px; background-color: lightcoral;" onclick="hideCircle(this)">3</div>
+        <div class="circle" id="circle4" style="top: 200px; left: 220px; background-color: rgb(132, 219, 157);" onclick="hideCircle(this)">4</div>
+        <div class="circle" id="circle5" style="top: 300px; left: 270px; background-color: rgb(225, 224, 224);" onclick="hideCircle(this)">5</div>
+        <div class="circle" id="circle6" style="top: 180px; left: 100px; background-color: rgb(218, 158, 228);" onclick="hideCircle(this)">6</div>
+        <div class="circle" id="circle7" style="top: 310px; left: 120px; background-color: lightsalmon;" onclick="hideCircle(this)">7</div>
+        <div class="circle" id="circle8" style="top: 150px; left: 350px; background-color: rgb(37, 207, 207);" onclick="hideCircle(this)">8</div>
+        <div class="circle" id="circle9" style="top: 250px; left: 140px; background-color: lightblue;" onclick="hideCircle(this)">9</div>
+        <div class="circle" id="circle10" style="top: 60px; left: 300px; background-color: rgb(189, 94, 187);" onclick="hideCircle(this)">10</div>
+
+        <button id="reset" onclick="resetCircles()">Сбросить</button>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
