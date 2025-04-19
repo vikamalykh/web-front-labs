@@ -39,6 +39,13 @@
             document.getElementById('huerotateImage').style.filter = 'hue-rotate(' + value + ')';
         }
 
+        function invertChange() {
+            let value = document.getElementById('invertValue').value + '%';
+            document.getElementById('invertOutput').innerText = value;
+            document.getElementById('invertImage').style.filter = 'invert(' + value + ')';
+        }
+
+
         
     </script>
 
@@ -59,9 +66,9 @@
         <div>
             Фильтр blur:
             <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
-            <span id="blurOutput"></span>
+            <span id="blurOutput">0px</span>
         </div>
-        <div><img src="seafil.webp" id="blurImage">0px</div>
+        <div><img src="seafil.webp" id="blurImage"></div>
 
         
         <div>
@@ -91,6 +98,14 @@
             <span id="huerotateOutput">0deg</span>
         </div>
         <div><img src="seafil.webp" id="huerotateImage"></div>
+
+        <div>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="invertChange()" id="invertValue">
+            <span id="invertOutput">0%</span>
+        </div>
+        <div><img src="seafil.webp" id="invertImage"></div>
+
 
 
     </main>
