@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function calculate() {
+            let applePrice = 100;
+            let pearPrice = 80;
+            let orangePrice = 150;
+            let watermelonPrice = 300;
+
+            let appleCount = document.getElementById('apples');
+            let pearCount = document.getElementById('pears');
+            let orangeCount = document.getElementById('oranges');
+            let watermelonCount = document.getElementById('watermelons');
+
+            let a = parseInt(appleCount.value);
+            let b = parseInt(pearCount.value);
+            let c = parseInt(orangeCount.value);
+            let d = parseInt(watermelonCount.value);
+
+            
+            if(isNaN(a)) {
+                alert('Вам необходимо вести даже ноль');
+                appleCount.focus();
+                appleCount.select();
+                appleCount.style.color = 'red';
+                appleCount.style.borderColor = 'red';
+                return;
+            }
+            if(isNaN(b)) {
+                alert('Вам необходимо вести даже ноль');
+                pearCount.focus();
+                pearCount.select();
+                pearCount.style.color = 'red';
+                pearCount.style.borderColor = 'red';
+                return;
+            }
+            if(isNaN(c)) {
+                alert('Вам необходимо вести даже ноль');
+                orangeCount.focus();
+                orangeCount.select();
+                orangeCount.style.color = 'red';
+                orangeCount.style.borderColor = 'red';
+                return;
+            }
+            if(isNaN(d)) {
+                alert('Вам необходимо вести даже ноль');
+                watermelonCount.focus();
+                watermelonCount.select();
+                watermelonCount.style.color = 'red';
+                watermelonCount.style.borderColor = 'red';
+                return;
+            }
+
+            appleCount.style.color = '';
+            appleCount.style.borderColor = '';
+            pearCount.style.color = '';
+            pearCount.style.borderColor = '';
+            orangeCount.style.color = '';
+            orangeCount.style.borderColor = '';
+            watermelonCount.style.color = '';
+            watermelonCount.style.borderColor = '';
+
+            let total = (a * applePrice) +  (b * pearPrice) + (c * orangePrice) + (d * watermelonPrice); 
+        
+            document.getElementById("totalPrice").innerText = "Общая цена: " + total + " р";
+        }
+
+        function clearAll() {
+            let appleCount = document.getElementById('apples');
+            let pearCount = document.getElementById('pears');
+            let orangeCount = document.getElementById('oranges');
+            let watermelonCount = document.getElementById('watermelons');
+
+            appleCount.value = '';
+            pearCount.value = '';
+            orangeCount.value = '';
+            watermelonCount.value = '';
+
+            appleCount.style.color = '';
+            appleCount.style.borderColor = '';
+            pearCount.style.color = '';
+            pearCount.style.borderColor = '';
+            orangeCount.style.color = '';
+            orangeCount.style.borderColor = '';
+            watermelonCount.style.color = '';
+            watermelonCount.style.borderColor = '';
+
+            document.getElementById("totalPrice").innerText = "Общая цена:";
+        }
+    </script>
+    <style>
+        .cart {
+            border: 2px solid rgb(23, 23, 83);
+            border-radius: 8px;
+            color: rgb(0, 0, 0);
+            background-color: rgba(181, 228, 255, 0.806);
+            padding: auto;
+            margin: 50px auto;
+            width: 300px;
+            height: 350px;
+            text-align: center;
+            box-shadow: 5px 5px 10px rgb(97, 87, 87);
+        }
+        .field {
+            margin-bottom: 15px;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        #calculateTotal {
+            cursor: pointer;
+            border: 2px solid darkblue;
+            border-radius: 4px;
+            background-color: rgb(213, 218, 248);
+        }
+        #clearCart {
+            cursor: pointer;
+            border: 2px solid darkblue;
+            border-radius: 4px;
+            background-color: rgb(213, 218, 248);
+        }
+
+        #totalPrice {
+            text-align: left;
+            padding-left: 5px;
+            text-shadow: 3px 3px 3px rgba(55, 71, 142, 0.52);
+        }
+    </style>
+</head>
+
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="cart">
+            <h2>Корзина товаров</h2>
+            <label for="apples">Яблоки (100р/шт):</label><br>
+            <input type="number" class="field" id="apples" placeholder="Введите количество" min="0"><br>
+
+            <label for="pears">Груши (80р/шт):</label><br>
+            <input type="number" class="field" id="pears" placeholder="Введите количество" min="0"><br>
+
+            <label for="oranges">Апельсины (150р/шт):</label><br>
+            <input type="number" class="field" id="oranges" placeholder="Введите количество" min="0"><br>
+
+            <label for="watermelons">Дыни (300р/шт):</label><br>
+            <input type="number" class="field" id="watermelons" placeholder="Введите количество" min="0"><br>
+
+            <button type="button" id="calculateTotal" onclick="calculate()" >Рассчитать</button>
+            <button type="button" id="clearCart" onclick="clearAll()">Очистить</button>
+
+            <div id="totalPrice" style="margin-top: 20px;">Общая цена:</div>
+        </div>
+
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
