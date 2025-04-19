@@ -27,6 +27,12 @@
             document.getElementById('contrastImage').style.filter = 'contrast(' + value + ')';
         }
 
+        function grayscaleChange() {
+            let value = document.getElementById('grayscaleValue').value + '%';
+            document.getElementById('grayscaleOutput').innerText = value;
+            document.getElementById('grayscaleImage').style.filter = 'grayscale(' + value + ')';
+        }
+
         
     </script>
 
@@ -49,7 +55,7 @@
             <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
             <span id="blurOutput"></span>
         </div>
-        <div><img src="seafil.webp" id="blurImage"></div>
+        <div><img src="seafil.webp" id="blurImage">0px</div>
 
         
         <div>
@@ -65,6 +71,13 @@
             <span id="contrastOutput">100%</span>
         </div>
         <div><img src="seafil.webp" id="contrastImage"></div>
+
+        <div>
+            Фильтр grayscale:
+            <input type="range" min="0" max="100" value="0" onchange="grayscaleChange()" id="grayscaleValue">
+            <span id="grayscaleOutput">0%</span>
+        </div>
+        <div><img src="seafil.webp" id="grayscaleImage"></div>
 
 
     </main>
