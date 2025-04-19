@@ -45,6 +45,11 @@
             document.getElementById('invertImage').style.filter = 'invert(' + value + ')';
         }
 
+        function saturateChange() {
+            let value = document.getElementById('saturateValue').value + '%';
+            document.getElementById('saturateOutput').innerText = value;
+            document.getElementById('saturateImage').style.filter = 'saturate(' + value + ')';
+        }
 
         
     </script>
@@ -106,6 +111,12 @@
         </div>
         <div><img src="seafil.webp" id="invertImage"></div>
 
+        <div>
+            Фильтр saturate:
+            <input type="range" min="0" max="500" value="100" onchange="saturateChange()" id="saturateValue">
+            <span id="saturateOutput">100%</span>
+        </div>
+        <div><img src="seafil.webp" id="saturateImage"></div>
 
 
     </main>
