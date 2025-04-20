@@ -8,6 +8,45 @@
     <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../icon/favicon-32x32.png">
     <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function applyFilter(event) {
+            let image = document.getElementById("dopImage");
+            let filterInfo = document.getElementById("filterInfo");
+            let filter = "hue-rotate(0deg)";
+
+            if (event.ctrlKey) {
+                let blur = (event.clientX % 20);
+                filter = `blur(${blur}px)`;
+            } else if (event.altKey) {
+                let gray = (event.clientX % 100);
+                filter = `grayscale(${gray}%)`;
+            } else if (event.shiftKey) {
+                let sep = (event.clientX % 100);
+                filter = `sepia(${sep}%)`;
+            } else {
+                let hue = (event.clientX % 360);
+                filter = `hue-rotate(${hue}deg)`;
+            }
+
+            image.style.filter = filter;
+            filterInfo.innerText = `Фильтр: ${filter}`;
+        }
+
+        function resetFilter() {
+            let image = document.getElementById("dopImage");
+            let filterInfo = document.getElementById("filterInfo");
+            image.style.filter = "none";
+            filterInfo.innerText = "Фильтр: hue-rotate(0deg)";
+        }
+    </script>
+    <style>
+        img {
+            width: 500px;
+            height: 300px;
+            cursor: pointer;
+            transition: filter 0.3s;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,6 +55,16 @@
     </header>
 
     <main>
+        <div id="help">
+            При наведении мыши будет работать фильтр hue-rotate.<br>
+            При нажатой клавише Ctrl - фильтр blur.<br>
+            При нажатой клавише Alt - фильтр grayscale.<br>
+            При нажатой клавише Shift - фильтр sepia.
+        </div>
+        <div>
+            <img src="dop.jpg" id="dopImage" onmousemove="applyFilter(event)" onmouseout="resetFilter()">
+            <div id="filterInfo">Фильтр: hue-rotate(0deg)</div>
+        </div>
     </main>
 
     <footer style="padding: 5px;">
