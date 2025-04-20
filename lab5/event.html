@@ -17,19 +17,23 @@
             
             if (this.event.ctrlKey) {
                 div.innerHTML += "<br>Нажата клавиша Ctrl";
-                div.style.backgroundColor = 'lightcoral'; 
-                div.style.border = '2px solid red'; 
+                div.style.backgroundColor = 'rgb(184, 89, 153)'; 
+                div.style.border = '2px dotted rgb(98, 13, 70)';
+                div.style.boxShadow = '5px 5px 5px rgb(98, 13, 70)' 
             } else if (this.event.altKey) {
                 div.innerHTML += "<br>Нажата клавиша Alt";
-                div.style.backgroundColor = 'lightblue'; 
-                div.style.border = '2px solid blue';
+                div.style.backgroundColor = 'rgb(96, 194, 207)'; 
+                div.style.border = '2px solid rgb(10, 78, 87)';
+                div.style.boxShadow = '5px 5px 5px rgb(10, 78, 87)' 
             } else if (this.event.shiftKey) {
                 div.innerHTML += "<br>Нажата клавиша Shift";
-                div.style.backgroundColor = 'lightgreen'; 
-                div.style.border = '2px solid green'; 
+                div.style.backgroundColor = 'rgb(168, 220, 96)'; 
+                div.style.border = '2px dashed rgb(54, 75, 25)';
+                div.style.boxShadow = '5px 5px 5px rgb(54, 75, 25)'  
             } else {
                 div.style.backgroundColor = 'azure'; 
                 div.style.border = '2px solid rgb(12, 12, 79)';
+                div.style.boxShadow = 'none'
             }
         } 
     </script>
