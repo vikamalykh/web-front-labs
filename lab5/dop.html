@@ -10,29 +10,48 @@
     <link rel="icon" href="../icon/favicon.ico">
     <script>
         function applyFilter(event) {
+
             let image = document.getElementById("dopImage");
             let filterInfo = document.getElementById("filterInfo");
+
+            let imageWidth = image.offsetWidth;
+            let mouseX = event.clientX - image.offsetLeft;
+            let filterValue = mouseX / imageWidth;
+
+            if (filterValue < 0) {
+                filterValue = 0;
+            }
+            if (filterValue > 1) {
+                filterValue = 1;
+            }
+
             let filter = "hue-rotate(0deg)";
+            let filterText = "hue-rotate(0deg)";
 
             if (event.ctrlKey) {
-                let blur = (event.clientX % 20);
-                filter = `blur(${blur}px)`;
+                let blurAmount = filterValue * 20;
+                filter = "blur(" + blurAmount + "px)";
+                filterText = "blur(" + blurAmount + "px)";
             } else if (event.altKey) {
-                let gray = (event.clientX % 100);
-                filter = `grayscale(${gray}%)`;
+                let grayscaleAmount = filterValue * 100; 
+                filter = "grayscale(" + grayscaleAmount + "%)";
+                filterText = "grayscale(" + grayscaleAmount + "%)";
             } else if (event.shiftKey) {
-                let sep = (event.clientX % 100);
-                filter = `sepia(${sep}%)`;
+                let sepiaAmount = filterValue * 100;
+                filter = "sepia(" + sepiaAmount + "%)";
+                filterText = "sepia(" + sepiaAmount + "%)";
             } else {
-                let hue = (event.clientX % 360);
-                filter = `hue-rotate(${hue}deg)`;
+                let hueAmount = filterValue * 360;
+                filter = "hue-rotate(" + hueAmount + "deg)";
+                filterText = "hue-rotate(" + hueAmount + "deg)";
             }
 
             image.style.filter = filter;
-            filterInfo.innerText = `Фильтр: ${filter}`;
+            filterInfo.innerText = "Фильтр: " + filterText;
         }
 
         function resetFilter() {
+
             let image = document.getElementById("dopImage");
             let filterInfo = document.getElementById("filterInfo");
             image.style.filter = "none";
@@ -46,6 +65,10 @@
             cursor: pointer;
             transition: filter 0.3s;
         }
+
+        #filterInfo {
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -57,6 +80,7 @@
     <main>
         <div id="help">
             При наведении мыши будет работать фильтр hue-rotate.<br>
+            Чем левее мышь, тем слабее эффект. Чем правее, тем сильнее.<br>
             При нажатой клавише Ctrl - фильтр blur.<br>
             При нажатой клавише Alt - фильтр grayscale.<br>
             При нажатой клавише Shift - фильтр sepia.
@@ -70,6 +94,6 @@
     <footer style="padding: 5px;">
         &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
     </footer>
-    
+
 </body>
 </html>
