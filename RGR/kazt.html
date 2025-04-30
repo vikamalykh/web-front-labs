@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Куйбышевазот</title>
+    <link rel="stylesheet" href="kazt.css">
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+        });
+        }
+    </script>
+    <style>
+        .tip {
+            display: flex;  
+            justify-content: center; 
+            align-items: center;   
+            padding: 10px;           
+            width: 50%; 
+            margin: 0 auto;            
+        }
+        .sil2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center; 
+            padding: 10px;
+            background-image: url(fon.jpg);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.431);
+            width: 100%;
+        }
+        .sil {
+            border: 2.5px solid #f8f8f8;
+            border-radius: 15px;
+            padding: 10px;
+            width: 150px;
+            transition: 0.5s 1s;
+            cursor: pointer;
+        }
+        .sil::after {
+            content: " →";
+        }
+        .sil:hover {
+            box-shadow: 0 0 15px rgba(245, 245, 247, 0.809);
+            transition: 0.5s;
+        }
+        #principles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #165ca7;
+        }
+        .prin {
+            margin: 10px;
+            width: 250px;
+            height: 75px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s 0.5s;
+        }
+        .prin img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px; 
+        }
+        .prin:hover {
+            box-shadow: 5px 5px 5px #165ca7;
+            background-color: #0e63cbb4;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="glav.png" style="height: 50px; width: 50px;">КуйбышевАзот</h1>
+    </header>
+    
+    <main>
+        <div class="sil2">
+            <h2 style="flex-basis: 100%; color: #f1f5f8;">Навигация</h2>
+            <p><a href="#about" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к информации о компании</a></p>
+            <p><a href="#history" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к истории</a></p>
+            <p><a href="#mission" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к миссии и целям</a></p>
+            <p><a href="https://www.kuazot.ru/"  class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти на официальный сайт</a></p>
+        </div>
+        <div id="about">
+            <h2>Информация о компании</h2>
+            <p><b style="color: #165ca7;">КуйбышевАзот</b> — одна из ведущих химических компаний в России, основанная в <i>1966 году</i>. 
+                лидер в производстве капролактама и продуктов его переработки, входит в число крупнейших производителей азотных удобрений. 
+                Активная инвестиционная политика обеспечивает «КуйбышевАзоту» быстрый и эффективный рост и устойчивое развитие.
+                Основатели компании — <u>группа ученых и инженеров</u>.</p>
+            <img src="logotip.jpg" alt="Логотип Куйбышевазот" class="tip">
+        </div>
+        
+        <div id="history">
+            <h2>Краткая история</h2>
+            <p>Строительство <span title="КАТЗ" style="color: #165ca7; cursor: pointer;">Куйбышевского азотнотукового завода</span> началось в <i>1961 году</i>. В <i>1966 году</i> предприятие заработало по полной технологической схеме. 
+                <i>23 августа 1966 года</i> считается официальной датой рождения завода. В <i>1975 году</i> создано производственное объединение «КуйбышевАзот» с головным 
+                предприятием КАТЗ, в которое вошли строящиеся <span title=" ТоАЗ" style="color: #165ca7; cursor: pointer;">Тольяттинский азотный завод</span>, Азотреммаш, Трансаммиак. В <i>1981 году</i> в результате реструктуризации 
+                они были выделены в самостоятельные юридические лица. В 1991 году «КуйбышевАзот» стал арендным предприятием, а затем, в <i>1992 году</i>, создано акционерное 
+                общество «КуйбышевАзот».</p>
+
+            <p><span title="период кризисных 90-х годов" style="color: #165ca7; cursor: pointer;">Когда происходила смена экономической и политической модели государства</span>, предприятие, в отличие от многих других заводов, 
+                сумело удержать выработку товарной продукции на уровне дореформенной и сохранить высококвалифицированный стабильный коллектив.</p>
+                
+            <p>Начало нового века стало для «КуйбышевАзота» временем бурного роста. В рамках стратегии развития компании с целью увеличения доли продукции с более высокой 
+                добавленной стоимостью с <i>2000 года</i> реализуется проект по углубленной переработке капролактама. Создан комплекс производств <u>полиамида 6, технической нити 
+                и кордной ткани</u> на производственной площадке в Тольятти, введено в эксплуатацию производство инженерных пластиков в Китае, приобретены активы по производству 
+                технических и текстильных нитей, кордной ткани в г. Курск, полиамидных тканей в г. Балашов. Организованы агрохимические прирельсовые базы, дилерская сеть 
+                по реализации минеральных удобрений.</p>
+                
+            <p>В настоящее время <b style="color: #165ca7;">ПАО «КуйбышевАзот»</b>  является группой компаний, предприятия и подразделения которой расположены в различных регионах <span title="Российская Федерация" style="cursor: pointer;">РФ</span>, а также Германии, 
+                <span title="Китайская Народная Республика" style="cursor: pointer;">КНР</span> и Сербии. Созданы совместные предприятия, работающие на промплощадке <i>в Тольятти</i>, с несколькими крупнейшими мировыми компаниями.</p>
+            <p>Сегодня Куйбышевазот активно инвестирует в <i>новые технологии</i> и устойчивое развитие.</p>
+            <img src="his.jpg" alt="КуйбышевАзот сейчас" class="tip">
+        </div>
+        
+        <div id="mission">
+            <h2>Миссия и цели</h2>
+            <p>Опираясь на накопленный опыт и используя достижения в области химии, <b style="color: #165ca7;">создавать продукты</b>, которые расширяют возможности людей и повышают качество их жизни. 
+                <b style="color: #165ca7;">Быть лидером</b> в производстве капролактама, полиамида и продуктов их переработки. <b style="color: #165ca7;">Развивать поставки</b> удобрений на отечественный рынок. 
+                Сбалансировано <b style="color: #165ca7;">удовлетворять интересы государства, акционеров и работников общества</b>.</p>
+        </div>
+        <div id="principles">
+            <h2 style="flex-basis: 100%; text-align: center;">ПРИНЦИПЫ</h2>
+            <p class="prin" style="color: #f1f5f8;">
+                <img src="https://www.kuazot.ru/files/personal_responsibility/ico-principe01_icon_1560173523.svg">
+                Порядочность
+            </p>
+            <p class="prin" style="color: #f1f5f8;">
+                <img src="https://www.kuazot.ru/files/personal_responsibility/ico-principe02_icon_1560173556.svg">
+                Последовательность
+            </p>
+            <p class="prin" style="color: #f1f5f8;">
+                <img src="https://www.kuazot.ru/files/personal_responsibility/ico-principe03_icon_1560173592.svg">
+                Профессионализм
+            </p>
+        </div>
+    </main>
+    
+    <button id="scrollToTop" onclick="scrollToTop()">Наверх</button>
+    
+    <footer style="padding: 5px;">
+        <p>&copy; 2025 Куйбышевазот</p>
+    </footer>
+</body>
+</html>
