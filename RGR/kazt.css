@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #03326a;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1{
+    margin: 20px 0;
+}
+h2 {
+    margin: 20px 0;
+    color: #03326a;
+}
+
+div {
+    margin: 0;
+    padding: 20px;
+    background: white;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #165ca7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
