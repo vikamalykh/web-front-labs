@@ -49,29 +49,29 @@
         }
         #principles {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            background-color: #165ca7;
+            background-color: #03326a;
         }
         .prin {
             margin: 10px;
-            width: 250px;
-            height: 75px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             transition: 0.5s 0.5s;
+            min-width: 150px;
         }
         .prin img {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 10px; 
         }
         .prin:hover {
-            box-shadow: 5px 5px 5px #165ca7;
-            background-color: #0e63cbb4;
+            font-size: 16pt;
+            text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.744);
             transition: 0.5s;
             cursor: pointer;
         }
@@ -88,6 +88,7 @@
             <p><a href="#about" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к информации о компании</a></p>
             <p><a href="#history" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к истории</a></p>
             <p><a href="#mission" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к миссии и целям</a></p>
+            <p><a href="#principles" class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти к принципам</a></p>
             <p><a href="https://www.kuazot.ru/"  class="sil" style="text-decoration: none; color: #f1f5f8;">Перейти на официальный сайт</a></p>
         </div>
         <div id="about">
@@ -129,7 +130,7 @@
                 Сбалансировано <b style="color: #165ca7;">удовлетворять интересы государства, акционеров и работников общества</b>.</p>
         </div>
         <div id="principles">
-            <h2 style="flex-basis: 100%; text-align: center;">ПРИНЦИПЫ</h2>
+            <h2 style="flex-basis: 100%; text-align: center; color: white;">ПРИНЦИПЫ</h2>
             <p class="prin" style="color: #f1f5f8;">
                 <img src="https://www.kuazot.ru/files/personal_responsibility/ico-principe01_icon_1560173523.svg">
                 Порядочность
@@ -148,7 +149,7 @@
     <button id="scrollToTop" onclick="scrollToTop()">Наверх</button>
     
     <footer style="padding: 5px;">
-        <p>&copy; 2025 Куйбышевазот</p>
+        <p>&copy; 2025 КуйбышевАзот</p>
     </footer>
 </body>
 </html>
