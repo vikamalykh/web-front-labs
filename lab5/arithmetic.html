@@ -129,7 +129,7 @@
             alert(hello);
         }
 
-        function changeOutput(buttonNum, backColor, textColor, typeBorder, radiusBorder, widthBorder, pxBorder) {
+        function changeOutput(buttonNum, backColor, textColor, typeBorder, radiusBorder, widthBorder) {
             let output = document.getElementById('output');
             output.innerHTML =  'Нажата кнопка ' + buttonNum;
             output.style.backgroundColor = backColor;
@@ -137,7 +137,6 @@
             output.style.borderStyle = typeBorder;
             output.style.borderRadius = radiusBorder;
             output.style.borderWidth = widthBorder;
-            output.style.borderColor = textColor;
         }
     </script>
     <style>
