@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Диаграмма</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function showDiagram() {
+            let data = [36, 86, 55, 28, 92, 60, 41, 17, 9, 43];
+            let colors = ['#a893e4', '#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', '#bae1ff', '#ffc9de', '#e6ccb3', '#f0e68c', '#d3bde0'];
+            let bars = document.getElementsByClassName('bar');
+            const diagWidth = document.getElementById('diag').clientWidth;
+            const maxData = Math.max(...data);
+            const k = document.getElementById('diag').clientHeight / maxData * 0.9; //  Исправлено: Используем clientHeight
+            for(let i = 0; i < data.length; i++) {
+                bars[i].style.height = k*data[i] + 'px';
+                bars[i].style.backgroundColor = colors[i % colors.length];
+                bars[i].textContent = data[i];
+                bars[i].style.textAlign = 'center';
+                bars[i].style.lineHeight = bars[i].style.height;
+            }
+        }
+    </script>
+    <style>
+        #diag {
+            background-color: white;
+            width: 85%;
+            height: 500px;
+            border: 2px solid rgb(56, 79, 148);
+            padding: 5px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+        .bar {
+            height: 0;
+            width: 50px;
+            margin: 5px 0;
+            transition: 0.5s;
+            color: rgb(172, 144, 152);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="showDiagram()">
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div id="diag">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
