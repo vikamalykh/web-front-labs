@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -33,14 +33,36 @@
 
             dateList.innerHTML = output;
         }
+
+        let timerNum;
+
+        function changeColors() {
+            const header = document.getElementsByTagName('header')[0];
+            const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            header.style.color = rgb;
+        }
+
+        function startChangeColors() {
+            changeColors();
+            timerNum = setInterval(changeColors, 1000);
+            document.getElementById('start-btn').disabled = true;
+            document.getElementById('stop-btn').disabled = false;
+        }
+
+        function stopChangeColors() {
+            clearInterval(timerNum);
+            document.getElementById('stop-btn').disabled = true; 
+            document.getElementById('start-btn').disabled = false;
+        }
     </script>
-     <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
         }
         h1 {
             text-align: center;
             color: #1e436a;
+            transition: color 0.5s; /* Плавный переход цвета текста заголовка */
         }
 
         #current-date {
@@ -71,6 +93,17 @@
             color: #545aa1;
             margin-right: 5px;
         }
+        button {
+            padding: 10px 20px;
+            color: rgb(31, 42, 72);
+            border: 2px solid rgb(31, 42, 72);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover {
+            box-shadow: 5px 5px 5px white;
+        }
     </style>
 </head>
 <body onload="showDate()">
@@ -82,8 +115,8 @@
         <h1>Дата и время для разных локалей</h1>
         <div id="current-date"></div>
         <div>
-            <button onclick="startChangeColors()">Старт</button>
-            <button onclick="stopChangeColors()" disabled>Старт</button>
+            <button onclick="startChangeColors()" id="start-btn">Старт</button>
+            <button onclick="stopChangeColors()" disabled id="stop-btn">Стоп</button>
         </div>
     </main>
 
