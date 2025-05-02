@@ -9,8 +9,9 @@ body {
 header {
     background: #03326a;
     color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 2px 35px;
+    text-align: left;
+    font-size: 13pt;
 }
 
 h1{
