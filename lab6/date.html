@@ -34,6 +34,26 @@
             dateList.innerHTML = output;
         }
 
+        let timeUpdater;
+
+        function startUpdateTime() {
+            showDate();
+            if (!timeUpdater) {
+                timeUpdater = setInterval(showDate, 1000);
+            }
+            document.getElementById('update-time-btn').disabled = true;
+            document.getElementById('stop-update-time-btn').disabled = false;
+        }
+
+        function stopUpdateTime() {
+            if (timeUpdater) {
+                clearInterval(timeUpdater);
+                timeUpdater = null;
+            }
+            document.getElementById('update-time-btn').disabled = false;
+            document.getElementById('stop-update-time-btn').disabled = true;
+        }
+
         let timerNum;
 
         function changeColors() {
@@ -62,7 +82,7 @@
         h1 {
             text-align: center;
             color: #1e436a;
-            transition: color 0.5s; /* Плавный переход цвета текста заголовка */
+            transition: color 0.5s;
         }
 
         #current-date {
@@ -114,7 +134,12 @@
     <main>
         <h1>Дата и время для разных локалей</h1>
         <div id="current-date"></div>
-        <div>
+        <div class="buttons-group">
+            <button onclick="startUpdateTime()" id="update-time-btn">Обновлять время</button>
+            <button onclick="stopUpdateTime()" disabled id="stop-update-time-btn">Остановить обновление времени</button>
+        </div>
+
+        <div class="buttons-group">
             <button onclick="startChangeColors()" id="start-btn">Старт</button>
             <button onclick="stopChangeColors()" disabled id="stop-btn">Стоп</button>
         </div>
