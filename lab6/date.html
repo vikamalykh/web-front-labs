@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Дата-время</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function showDate() {
+            let dateList = document.getElementById('current-date');
+            let today = new Date();
+            let locales = [
+                { lang: 'ru-RU', name: 'Русская локаль' },
+                { lang: 'en-US', name: 'Американская локаль' },
+                { lang: 'es-DO', name: 'Испанская локаль' },
+                { lang: 'fr-FR', name: 'Французская локаль' },
+                { lang: 'ja-JP', name: 'Японская локаль' },
+                { lang: 'ar-EG', name: 'Арабская (Египет) локаль' }
+            ];
+
+            let output = '';
+
+            locales.forEach(locale => {
+                output += `<div class="date-format">
+                             <span class="locale-name">${locale.name}:</span>
+                             ${today.toLocaleString(locale.lang)}
+                           </div>`;
+            });
+
+            dateList.innerHTML = output;
+        }
+    </script>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #1e436a;
+        }
+
+        #current-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .date-format {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.332); 
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .date-format:hover {
+            background-color: #d6ecef;
+            box-shadow: 0 4px 8px rgba(25, 22, 76, 0.31);
+        }
+
+        .locale-name {
+            font-weight: 600;
+            color: #545aa1;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <h1>Дата и время для разных локалей</h1>
+        <div id="current-date"></div>
+        <div>
+            <button onclick="startChangeColors()">Старт</button>
+            <button onclick="stopChangeColors()" disabled>Старт</button>
+        </div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
