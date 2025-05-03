@@ -13,6 +13,12 @@ header {
     text-align: left;
     font-size: 13pt;
 }
+footer {
+    background: #03326a;
+    color: white;
+    padding: 2px 35px;
+    text-align: left;
+}
 
 h1{
     margin: 20px 0;
