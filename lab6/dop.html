@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Дополнительное задание</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        let temps = [], highlightedBar = null;
+
+        function generateData() {
+            temps = Array.from({ length: 30 }, () => {
+                const min = Math.floor(Math.random() * 20) + 5; // от 5 до 24
+                const max = min + Math.floor(Math.random() * 15);
+                return { min, max };
+            });
+        }
+
+        function drawChart() {
+            const chartContainer = document.getElementById('chartContainer');
+            chartContainer.innerHTML = ''; // Очищаем контейнер
+
+            const maxHeight = Math.max(...temps.map(day => day.max));
+
+            temps.forEach((day, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.dataset.index = index;
+                bar.addEventListener('click', () => highlightBar(index));
+
+                const barInner = document.createElement('div');
+                barInner.className = 'bar-inner';
+                barInner.style.height = ((day.max - day.min) / maxHeight) * 100 + '%';
+                bar.style.height = (day.min / maxHeight) * 100 + '%';
+
+                const maxTemp = document.createElement('div');
+                maxTemp.className = 'maxTemp';
+                maxTemp.textContent = day.max + '°C';
+                
+                const minTemp = document.createElement('div');
+                minTemp.className = 'minTemp';
+                minTemp.textContent = day.min + '°C';
+
+                bar.appendChild(barInner);
+                bar.appendChild(maxTemp);
+                bar.appendChild(minTemp);
+                chartContainer.appendChild(bar);
+            });
+        }
+
+        function highlightBar(index) {
+            const bars = document.querySelectorAll('.bar');
+            if (highlightedBar !== null) {
+                bars[highlightedBar].style.backgroundColor = 'rgb(43, 44, 121)';
+            }
+            highlightedBar = index;
+            bars[index].style.backgroundColor = 'rgb(228, 168, 147)';
+
+            document.getElementById('minTempOutput').textContent = temps[index].min + '°C';
+            document.getElementById('maxTempOutput').textContent = temps[index].max + '°C';
+        }
+
+        function init() {
+            generateData();
+            drawChart();
+        }
+    </script>
+    <style>
+        #chartContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 300px;
+            border: 2px solid black;
+            padding: 0 5px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .bar {
+            width: 20px;
+            background-color: rgb(43, 44, 121);
+            margin: 0 5px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+        }
+        
+        .bar-inner {
+            background-color: rgba(150, 215, 237, 0.941);
+            width: 100%;
+        }
+
+        .maxTemp, .minTemp {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .maxTemp {
+            top: -15px;
+        }
+
+        .minTemp {
+            bottom: -15px;
+        }
+
+        #controls {
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <h1>Температура за месяц</h1>
+    <div id="chartContainer"></div>
+
+    <div id="controls">
+        Номер дня:
+        <input type="number" id="dayInput" min="1" max="30">
+        <button onclick="highlightBar(document.getElementById('dayInput').value - 1)">Показать</button>
+        <p>Минимальная температура: <span id="minTempOutput"></span></p>
+        <p>Максимальная температура: <span id="maxTempOutput"></span></p>
+    </div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
