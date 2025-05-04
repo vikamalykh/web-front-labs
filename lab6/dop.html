@@ -14,55 +14,52 @@
 
         function generateData() {
             temps = Array.from({ length: 30 }, () => {
-                const min = Math.floor(Math.random() * 20) + 5; // от 5 до 24
+                const min = Math.floor(Math.random() * 20) + 5; 
                 const max = min + Math.floor(Math.random() * 15);
                 return { min, max };
             });
         }
 
         function drawChart() {
-            const chartContainer = document.getElementById('chartContainer');
-            chartContainer.innerHTML = ''; // Очищаем контейнер
+            const container = document.getElementById('chartContainer');
+            container.innerHTML = '';
+            const maxHeight = Math.max(...temps.map(t => t.max));
 
-            const maxHeight = Math.max(...temps.map(day => day.max));
-
-            temps.forEach((day, index) => {
+            temps.forEach(({ min, max }, i) => {
                 const bar = document.createElement('div');
                 bar.className = 'bar';
-                bar.dataset.index = index;
-                bar.addEventListener('click', () => highlightBar(index));
+                bar.dataset.index = i;
+                bar.onclick = () => highlightBar(i);
 
-                const barInner = document.createElement('div');
-                barInner.className = 'bar-inner';
-                barInner.style.height = ((day.max - day.min) / maxHeight) * 100 + '%';
-                bar.style.height = (day.min / maxHeight) * 100 + '%';
-
-                const maxTemp = document.createElement('div');
-                maxTemp.className = 'maxTemp';
-                maxTemp.textContent = day.max + '°C';
-                
-                const minTemp = document.createElement('div');
-                minTemp.className = 'minTemp';
-                minTemp.textContent = day.min + '°C';
-
-                bar.appendChild(barInner);
-                bar.appendChild(maxTemp);
-                bar.appendChild(minTemp);
-                chartContainer.appendChild(bar);
+                bar.innerHTML = `
+                    <div class="bar-inner" style="height:${(max - min) / maxHeight * 100}%"></div>
+                    <div class="maxTemp">${max}°C</div>
+                    <div class="minTemp">${min}°C</div>
+                `;
+                bar.style.height = (min / maxHeight * 100) + '%';
+                container.appendChild(bar);
             });
         }
 
         function highlightBar(index) {
             const bars = document.querySelectorAll('.bar');
-            if (highlightedBar !== null) {
-                bars[highlightedBar].style.backgroundColor = 'rgb(43, 44, 121)';
-            }
-            highlightedBar = index;
-            bars[index].style.backgroundColor = 'rgb(228, 168, 147)';
 
-            document.getElementById('minTempOutput').textContent = temps[index].min + '°C';
-            document.getElementById('maxTempOutput').textContent = temps[index].max + '°C';
-        }
+            bars.forEach((bar, i) => {
+            const barInner = bar.querySelector('.bar-inner');
+
+            if (i == index) {
+                    bar.style.backgroundColor = 'rgb(148, 47, 89)';
+                    barInner.style.backgroundColor = 'rgb(229, 122, 167)';
+            } else {
+                    bar.style.backgroundColor = 'rgb(43, 44, 121)';
+                    barInner.style.backgroundColor = 'rgba(150, 215, 237, 0.941)';
+            }
+        })
+            const { min, max } = temps[index];
+            document.getElementById('minTempOutput').textContent = min + '°C';
+            document.getElementById('maxTempOutput').textContent = max + '°C';       
+        };
+        
 
         function init() {
             generateData();
