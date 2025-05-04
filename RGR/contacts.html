@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Куйбышевазот</title>
+    <link rel="stylesheet" href="kazt.css">
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+        });
+        }
+    </script>
+    <style>
+        main {
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px; 
+        }
+
+        .contact-card {
+            width: 300px;
+            height: 250px;
+            background-color: #fff;
+            border-radius: 2px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 14pt;
+            color: #39689b;
+            margin-bottom: 5px;
+        }
+
+        .contact-card p {
+            font-size: 12pt;
+            color: #666; /* Цвет должности */
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #map {
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .contact {
+            background-image: url("contact.jpg");
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.431);
+            padding: 20px;
+            width: 100%;
+        }
+        .contact h2 {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="glav.png" style="height: 50px; width: 50px;">КуйбышевАзот</h1>
+    </header>
+    
+    <main>
+        <div class="contact">
+            <h2 style="flex-basis: 100%; color: #f1f5f8;">Контакты и геолокация</h2>
+        </div>
+
+        <div class="contact-card">
+            <h3>КОСОВА ЕЛЕНА ЮРЬЕВНА</h3>
+            <p>Начальник управления информации</p>
+            <p>+7(8482) 56-10-47</p>
+            <a href="mailto:KosovaEY@kuazot.ru">KosovaEY@kuazot.ru</a>
+        </div>
+
+        <div class="contact-card">
+            <h3>ВАДЕХИН КОНСТАНТИН АНАТОЛЬЕВИЧ</h3>
+            <p>Заместитель начальника управления информации</p>
+            <p>+7(8482) 56-11-47</p>
+            <a href="mailto:VadehinKA@kuazot.ru">VadehinKA@kuazot.ru</a>
+        </div>
+
+        <div class="contact-card">
+            <h3>УПРАВЛЕНИЕ ИНФОРМАЦИИ</h3>
+            <p>+7(8482) 56-10-47</p>
+            <p>+7(8482) 56-11-47</p>
+            <p>+7(8482) 56-19-01</p>
+            <a href="mailto:Press@kuazot.ru">Press@kuazot.ru</a>
+        </div>
+
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=49.450531%2C53.556214&mode=search&oid=1511944278&ol=biz&z=17.2" width="80%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+    </main>
+    
+    <button id="scrollToTop" onclick="scrollToTop()">Наверх</button>
+    
+    <footer style="padding: 5px;">
+        <p>&copy; 2025 КуйбышевАзот</p>
+    </footer>
+</body>
+</html>
