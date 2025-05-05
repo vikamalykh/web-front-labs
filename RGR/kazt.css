@@ -6,12 +6,22 @@ body {
     padding: 0;
 }
 
+main {
+    padding-bottom: 20px;
+    padding-top: 80px;
+}
+
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background: #03326a;
     color: white;
-    padding: 2px 35px;
+    padding: 10px 20px;
     text-align: left;
-    font-size: 13pt;
+    font-size: 10pt;
+    display: flex;
+    z-index: 100;
 }
 footer {
     background: #03326a;
@@ -21,7 +31,9 @@ footer {
 }
 
 h1{
-    margin: 20px 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
 }
 h2 {
     margin: 20px 0;
@@ -46,4 +58,21 @@ div {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12pt;
+    transition: 0.5s;
+}
+nav a:hover {
+    text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.718);
+    text-decoration: underline;
 }
