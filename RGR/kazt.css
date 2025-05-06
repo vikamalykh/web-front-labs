@@ -70,9 +70,10 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 12pt;
-    transition: 0.5s;
+    transition: 0.5s 0.5s;
 }
 nav a:hover {
     text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.718);
     text-decoration: underline;
+    transition: 0.5s;
 }
