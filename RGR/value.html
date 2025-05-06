@@ -70,7 +70,7 @@
                     const res = await fetch(url);
                     if (res.ok) {
                         const data = await res.json();
-                        const rate = data.Valute.KGS.Value;
+                        const rate = (data.Valute.KGS.Value / 100).toFixed(4);
                         dates.push(`${dd}.${mm}`);
                         rates.push(rate);
                     }
