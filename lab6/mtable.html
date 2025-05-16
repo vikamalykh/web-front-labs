@@ -35,7 +35,7 @@
             document.getElementById('startWith').style.color = '';
             document.getElementById('startWith').style.borderColor = '';
 
-            for(i = startWith; i <= endWith; i++) {
+            for(i = startWith; i <= endWith; i+=0.5) {
                 let s = `<div class="mtable-item">${i} * ${multiplyBy} = ${i * multiplyBy}</div>`;
                 tbl.innerHTML += s;
             }

@@ -45,16 +45,16 @@
             const bars = document.querySelectorAll('.bar');
 
             bars.forEach((bar, i) => {
-            const barInner = bar.querySelector('.bar-inner');
+                const barInner = bar.querySelector('.bar-inner');
 
-            if (i == index) {
-                    bar.style.backgroundColor = 'rgb(148, 47, 89)';
-                    barInner.style.backgroundColor = 'rgb(229, 122, 167)';
-            } else {
-                    bar.style.backgroundColor = 'rgb(43, 44, 121)';
-                    barInner.style.backgroundColor = 'rgba(150, 215, 237, 0.941)';
-            }
-        })
+                if (i == index) {
+                        bar.style.backgroundColor = 'rgb(148, 47, 89)';
+                        barInner.style.backgroundColor = 'rgb(229, 122, 167)';
+                } else {
+                        bar.style.backgroundColor = 'rgb(43, 44, 121)';
+                        barInner.style.backgroundColor = 'rgba(150, 215, 237, 0.941)';
+                }
+            })
             const { min, max } = temps[index];
             document.getElementById('minTempOutput').textContent = min + '°C';
             document.getElementById('maxTempOutput').textContent = max + '°C';       
