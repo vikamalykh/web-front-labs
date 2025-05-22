@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Курс Евро</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script>
+        function getEuroExchangeRate() {
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                const euroValue = json.Valute.EUR.Value;
+                const previousValue = json.Valute.EUR.Previous;
+                const date = new Date(json.Date).toLocaleDateString('ru-RU', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                })
+
+                const difference = euroValue - previousValue;
+                const differenceText = difference > 0 ? `Поднялся на ${difference.toFixed(2)} руб.` : 
+                                    (difference < 0 ? `Опустился на ${Math.abs(difference).toFixed(2)} руб.` : 
+                                    'Без изменений');
+
+                const message = `
+                    <div class="exchange-info">
+                        <h2>Курс евро на ${date}:</h2>
+                        <p>Текущий курс: <strong>${euroValue.toFixed(2)} руб.</strong></p>
+                        <p>Курс за предыдущую дату: <strong>${previousValue.toFixed(2)} руб.</strong></p>
+                        <p>${differenceText}</p>
+                    </div>
+                `;
+  
+                document.getElementById('exchange-result').innerHTML = message;
+            })
+
+            .catch(function(error) {
+                console.error('Ошибка:', error);
+            });
+        }
+    </script>
+     <style>
+        .exchange-info {
+            border: 2px solid rgb(36, 91, 113);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            color: #244B71;
+        }
+        h2 {
+            margin: 0;
+            font-size: 14pt;
+        }
+        p {
+            margin: 5px 0;
+            font-size: 12pt;
+        }
+        button {
+            border: 2px solid rgb(36, 91, 113);
+            background-color: rgb(58, 141, 174);
+            border-radius: 6px;
+            color: white;
+            height: 50px;
+            width: 150px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 10pt;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: rgb(36, 91, 113);
+            border-color: rgb(24, 65, 90);
+        }
+        a:hover {
+            color: rgb(25, 37, 83);
+            background-color: rgba(0, 0, 255, 0);
+            box-shadow: none;
+            text-decoration: none;
+            text-shadow: 5px 5px 5px rgba(69, 115, 231, 0.462);
+            transition: 0.3s;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="exchange-result"></div>
+        <p style="margin-top: 15px;">
+            <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        </p>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+    
+</body>
+</html>
