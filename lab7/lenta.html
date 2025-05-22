@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малых Виктория Евгеньевна. Котировки акций компании Лента</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../icon/favicon-32x32.png">
+    <link rel="icon" href="../icon/favicon.ico">
+    <script src="lenta.js"></script>
+    <script>
+
+        function showStockPrices() {
+            let table = document.getElementById('stock-table');
+            
+            while (table.rows.length > 0) {
+                table.deleteRow(0);
+            }
+            
+            let headerRow = table.insertRow();
+            let headers = ["Дата", "Цена, руб", "Изменение"];
+            for (let i = 0; i < headers.length; i++) {
+                let th = document.createElement('th');
+                th.innerText = headers[i];
+                headerRow.appendChild(th);
+            }
+            
+            for (let i = 0; i < stockPrices.length; i++) {
+                let row = table.insertRow();
+                
+                let dateCell = row.insertCell();
+                dateCell.innerText = stockDates[i];
+                
+                let priceCell = row.insertCell();
+                priceCell.innerText = stockPrices[i].toFixed(2);
+                
+                let changeCell = row.insertCell();
+                if (i === 0) {
+                    changeCell.innerText = "—";
+                } else {
+                    let change = stockPrices[i] - stockPrices[i-1];
+                    changeCell.innerText = change.toFixed(2);
+                    
+                    if (change > 0) {
+                        changeCell.style.color = 'green';
+                    } else if (change < 0) {
+                        changeCell.style.color = 'red';
+                    }
+                }
+            }
+            
+            let sum = 0;
+            let min = stockPrices[0];
+            let max = stockPrices[0];
+            
+            for (let i = 0; i < stockPrices.length; i++) {
+                sum += stockPrices[i];
+                if (stockPrices[i] < min) min = stockPrices[i];
+                if (stockPrices[i] > max) max = stockPrices[i];
+            }
+            
+            let average = sum / stockPrices.length;
+            
+            let statsDiv = document.getElementById('stock-stats');
+            statsDiv.innerHTML = `
+                <p>Среднее значение: ${average.toFixed(2)} руб</p>
+                <p>Минимальное значение: ${min.toFixed(2)} руб</p>
+                <p>Максимальное значение: ${max.toFixed(2)} руб</p>
+            `;
+            
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+        }
+    </script>
+    <style>
+        button {
+            border: 2px solid rgb(36, 91, 113);
+            background-color: rgb(58, 141, 174);
+            border-radius: 6px;
+            color: white;
+            height: 50px;
+            width: 220px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: rgb(36, 91, 113);
+            border-color: rgb(24, 65, 90);
+        }
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: white;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid rgb(36, 91, 113);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        th {
+            background-color: #244B71;
+            color: white;
+            font-weight: bold;
+        }
+        td {
+            color: #244B71;
+        }
+        #stock-stats {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #244B71;
+            line-height: 1.6;
+        }
+        #stock-stats p {
+            margin: 8px 0;
+        }
+        h2 {
+            color: #244B71;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header style="padding: 5px;">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <h2>Котировки акций компании Лента</h2>
+        <button onclick="showStockPrices()">Курс акций "Лента"</button>
+        <table border="1" id="stock-table"></table>
+        <div id="stock-stats"></div>
+    </main>
+
+    <footer style="padding: 5px;">
+        &copy; Малых Виктория, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
+
