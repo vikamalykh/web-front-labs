@@ -25,12 +25,12 @@
                 const message = `
                     <div class="weather-info">
                         <h2>Прогноз погоды в Новосибирске на сегодня:</h2>
-                        <p>Температура в 8:00: <strong>${temperatures[index8am].toFixed(1)} °C</strong></p>
-                        <p>Температура в 12:00: <strong>${temperatures[index12pm].toFixed(1)} °C</strong></p>
-                        <p>Температура в 20:00: <strong>${temperatures[index8pm].toFixed(1)} °C</strong></p>
+                        <p>Температура в 8:00: <i>${temperatures[index8am].toFixed(1)} °C</i></p>
+                        <p>Температура в 12:00: <i>${temperatures[index12pm].toFixed(1)} °C</i></p>
+                        <p>Температура в 20:00: <i>${temperatures[index8pm].toFixed(1)} °C</i></p>
                     </div>
                 `;
-                document.getElementById('weather-result').innerHTML = message;
+                document.getElementById('result').innerHTML = message;
             })
             .catch(error => {
                 console.error('Ошибка:', error);
@@ -87,8 +87,8 @@
     </header>
 
     <main>
-        <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
-        <div id="weather-result"></div>
+        <button onclick="getWeatherForecast()">Прогноз погоды в Новосибирске</button>
+        <div id="result"></div>
         <p style="margin-top: 15px;">
             <a href="https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly">Данные прогноза</a>
         </p>
