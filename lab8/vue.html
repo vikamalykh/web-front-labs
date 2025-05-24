@@ -37,11 +37,16 @@
                     <h2 class="card-title">Цветы</h2>
                     <ul class="list-group">
                         <li v-for="(flower, id) in flowers" class="list-group-item">
-                            {{ flower }} <button @click="edit(id, flower)" class="btn btn-info btn-sm"  v-if="flower !== null">
+                            {{ flower }} 
+                            <button @click="edit(id, flower)" class="btn btn-info btn-sm"  style="margin-right: 5px;" v-if="flower !== null">
                                 <i class="bi bi-pencil-fill"></i></button>
-                                <div class="spinner-border text-info" role="status"  v-if="flower === null"></div>
+                            <button @click="removeFlower(id)" class="btn btn-danger  btn-sm" v-if="flower !== null">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <div class="spinner-border text-info" role="status"  v-if="flower === null"></div>
                         </li>
                     </ul>
+                    <button @click="addFlower" class="btn btn-success" style="margin-top: 5px;">Добавить цветок</button>
                 </div>
             </div>
             <hr>
@@ -123,6 +128,15 @@
                     setTimeout(() => {
                         this.flowers[id] = newName;
                     }, 3000);
+                },
+                removeFlower(id) {
+                    this.flowers.splice(id, 1);
+                },
+                addFlower() {
+                    let newFlower = prompt("Введите имя нового цветка:");
+                    if (newFlower) {
+                        this.flowers.push(newFlower);
+                    }
                 },
                 sum() {
                     this.result = this.a + this.b;
